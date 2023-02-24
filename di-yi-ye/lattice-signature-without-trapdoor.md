@@ -100,7 +100,7 @@ choosing $f, \mathcal{D}$ m-dimensional Normal distribution with standard variat
 * $q$: small (polynomial-size) prime number
 * $\mathbb{Z\_q}: \[-\frac{q-1}{2}, \frac{q-1}{2}]$
 * $\mathbf{v}$: all column vectors
-* $l\_p \text{norm}: ||\bold{v}||\_p$, omit $p$ if $p=2$
+* $l\_p \text{norm}: ||\mathbf{v}||\_p$, omit $p$ if $p=2$
 * $\mathcal{D}$: distribution, $x \leftarrow$\mathcal{D}$: $x$ is chosen according to dist\_ $\mathcal{D}$
 * $\mathcal{S}$: set, $x \leftarrow$\mathcal{S}$: $x$ is chosen uniformly at random from $\mathcal{S}$
 * $\mathbf{E}$: Event $\Pr\[\mathbf{E}; x\_1 \leftarrow$ \mathcal{D}, ......, x\_k \leftarrow \mathcal{D}\_k]$
@@ -113,7 +113,7 @@ Def2.1: signature scheme Def2.2: security forger
 
 Def3.1: $l\_2-SIS\_{q,n,m,\beta}$ problem: Def3.2: $SIS\_{q,n,m,d}$ distribution: Def3.3: $SIS\_{q,n,m,d}$ search problem Def3.4: $SIS\_{q,n,m,d}$ decision problem
 
-Def3.1: $l\_2-SIS\_{q,n,m,\beta}$ problem:  given $\mathbf{A} \leftarrow $ \mathbb{Z}_q^{n\times m}$, find $\mathbf{v} \in \mathbb{Z}^m \setminus {0} \land ||\bold{v}|| \leq \beta$ Def3.2: $SIS_{q,n,m,d}$ distribution:  $\mathbf{A} \leftarrow $ \mathbb{Z}_q^{n\times m}$, $\mathbf{s} \leftarrow $ {-d,..., 0, ..., d}^m$, output $(\mathbf{A, As})$ Def3.3: $SIS_{q,n,m,d}$ search problem  given $\bold{(A, t)}$, find $\bold{s}$, s.t. $\bold{As=t} $ Def3.4: $SIS\_{q,n,m,d}$ decision problem  given $\bold{(A, t)}$, decide whehter it is from $SIS$ dist, or uniformly at random from $\mathbb{Z}\_q^{n×m} \times \mathbb{Z}\_q^n$ when $d \ll q^{\frac{n}{m\}}$: low density problem when $d \gg q^{\frac{n}{m\}}$: high density problem when $d == q^{\frac{n}{m\}}$: hardest Reduce to $\bold{A} = \[\bold{\bar{A\}} || \bold{I}], \bold{\bar{A\}} ←\mathcal{U} \mathbb{Z}\_q^{n × (m - n)}$, called "_Hermite Normal Form_"
+Def3.1: $l\_2-SIS\_{q,n,m,\beta}$ problem:  given $\mathbf{A} \leftarrow $ \mathbb{Z}_q^{n\times m}$, find $\mathbf{v} \in \mathbb{Z}^m \setminus {0} \land ||\mathbf{v}|| \leq \beta$ Def3.2: $SIS_{q,n,m,d}$ distribution:  $\mathbf{A} \leftarrow $ \mathbb{Z}_q^{n\times m}$, $\mathbf{s} \leftarrow $ {-d,..., 0, ..., d}^m$, output $(\mathbf{A, As})$ Def3.3: $SIS_{q,n,m,d}$ search problem  given $\mathbf{(A, t)}$, find $\mathbf{s}$, s.t. $\mathbf{As=t} $ Def3.4: $SIS\_{q,n,m,d}$ decision problem  given $\mathbf{(A, t)}$, decide whehter it is from $SIS$ dist, or uniformly at random from $\mathbb{Z}\_q^{n×m} \times \mathbb{Z}\_q^n$ when $d \ll q^{\frac{n}{m\}}$: low density problem when $d \gg q^{\frac{n}{m\}}$: high density problem when $d == q^{\frac{n}{m\}}$: hardest Reduce to $\mathbf{A} = \[\mathbf{\bar{A\}} || \mathbf{I}], \mathbf{\bar{A\}} ←\mathcal{U} \mathbb{Z}\_q^{n × (m - n)}$, called "_Hermite Normal Form_"
 
 ### 3.1 Relation Between the SIS variants
 
@@ -128,66 +128,66 @@ Def4.1: continuous Gaussian Def4.2: Discrete Gaussian Lem4.3: Discrete Gaussian 
 Def4.1: continuous Gaussian
 
 $$
-ho_{\mathbf{v},\sigma}^{m}(\bold{x}) = (\frac{1}{\sqrt{2\pi\sigma^2}})^m e^{-\frac{||\bold{x - v}||^2}{2\sigma^2}}
+ho_{\mathbf{v},\sigma}^{m}(\mathbf{x}) = (\frac{1}{\sqrt{2\pi\sigma^2}})^m e^{-\frac{||\mathbf{x - v}||^2}{2\sigma^2}}
 $$
 
 Def4.2: Discrete Gaussian
 
 $$
-D_{\mathbf{v}, \sigma}^m(\bold{x}) = \rho_{\mathbf{v},\sigma}^{m}(\bold{x}) / \rho_{\sigma}^{m}(\mathbb{Z}^m) ; \rho_{\sigma}^{m}(\mathbb{Z}^m) = \Sigma_{\bold{z}\in\mathbb{Z}^m}\rho_{\sigma}^{m}(\mathbf{z})
+D_{\mathbf{v}, \sigma}^m(\mathbf{x}) = \rho_{\mathbf{v},\sigma}^{m}(\mathbf{x}) / \rho_{\sigma}^{m}(\mathbb{Z}^m) ; \rho_{\sigma}^{m}(\mathbb{Z}^m) = \Sigma_{\mathbf{z}\in\mathbb{Z}^m}\rho_{\sigma}^{m}(\mathbf{z})
 $$
 
 Lem4.3: Discrete Gaussian vector inner product probability bound
 
 $$
-\forall \bold{v} \in \mathbb{R}^m, \forall \sigma, r > 0; \\ \Pr[|<\bold{z, v}>| > r; \mathbf{z} \stackrel{\$}{\longleftarrow}D_{\sigma}^m] \leq 2 e^{-\frac{r^2}{2||\bold{v}||^2 \sigma^2}}
+\forall \mathbf{v} \in \mathbb{R}^m, \forall \sigma, r > 0; \\ \Pr[|<\mathbf{z, v}>| > r; \mathbf{z} \stackrel{\$}{\longleftarrow}D_{\sigma}^m] \leq 2 e^{-\frac{r^2}{2||\mathbf{v}||^2 \sigma^2}}
 $$
 
 Lem4.4:
 
 1. $\forall k > 0, \Pr\[|z| > k\sigma; z\stackrel{$}{\longleftarrow}D\_{\sigma}^{1}] \leq 2 e^{-\frac{k^2}{2\}}$
-2. $∀ \bold{z}∈\mathbb{Z}^m \land σ \geq 3\sqrt{2\pi}, D\_\sigma^m(\bold{z}) \leq 2^{-m}$
-3. $\forall k > 1, \Pr\[||\bold{z}|| > k\sigma\sqrt{m}; \bold{z}\stackrel{$}{\longleftarrow} D\_{\sigma}^{m}] \leq k ^m \cdot e^{\frac{m}{2}(1 - k^2)}$
+2. $∀ \mathbf{z}∈\mathbb{Z}^m \land σ \geq 3\sqrt{2\pi}, D\_\sigma^m(\mathbf{z}) \leq 2^{-m}$
+3. $\forall k > 1, \Pr\[||\mathbf{z}|| > k\sigma\sqrt{m}; \mathbf{z}\stackrel{$}{\longleftarrow} D\_{\sigma}^{m}] \leq k ^m \cdot e^{\frac{m}{2}(1 - k^2)}$
 
 Lem4.5:
 
 $$
-\forall \bold{v} \in \mathbb{Z}^m, \text{if} \sigma=\omega(||\bold{v}||\sqrt{\log m}) \quad \text{then}: \\ \Pr[D_{\sigma}^m(\bold{z})/D_{\bold{v},\sigma}^m(\bold{z}) = O(1); \mathbf{z}\stackrel{\$}{\longleftarrow}D_{\sigma}^m] = 1 - 2^{\omega(\log m)} \\
+\forall \mathbf{v} \in \mathbb{Z}^m, \text{if} \sigma=\omega(||\mathbf{v}||\sqrt{\log m}) \quad \text{then}: \\ \Pr[D_{\sigma}^m(\mathbf{z})/D_{\mathbf{v},\sigma}^m(\mathbf{z}) = O(1); \mathbf{z}\stackrel{\$}{\longleftarrow}D_{\sigma}^m] = 1 - 2^{\omega(\log m)} \\
 $$
 
 i.e.
 
 $$
-\forall \bold{v} \in \mathbb{Z}^m, \text{if} \sigma=\alpha ||\bold{v}||, \forall \alpha > 0 \quad \text{then}: \\ \Pr[D_{\sigma}^m(\bold{z})/D_{\bold{v},\sigma}^m(\bold{z}) < e^{\frac{12}{\alpha} + \frac{1}{2\alpha^2}}; \mathbf{z}\stackrel{\$}{\longleftarrow}D_{\sigma}^m] = 1 - 2^{-100} \\
+\forall \mathbf{v} \in \mathbb{Z}^m, \text{if} \sigma=\alpha ||\mathbf{v}||, \forall \alpha > 0 \quad \text{then}: \\ \Pr[D_{\sigma}^m(\mathbf{z})/D_{\mathbf{v},\sigma}^m(\mathbf{z}) < e^{\frac{12}{\alpha} + \frac{1}{2\alpha^2}}; \mathbf{z}\stackrel{\$}{\longleftarrow}D_{\sigma}^m] = 1 - 2^{-100} \\
 $$
 
-Thrm4.6: main Therom if $V \in \mathbb{Z}^m; \forall \bold{v} \in V, ||\bold{v}|| < T; \sigma \in \mathbb{R}; \sigma = \omega(T\sqrt{\log m})$ then:
+Thrm4.6: main Therom if $V \in \mathbb{Z}^m; \forall \mathbf{v} \in V, ||\mathbf{v}|| < T; \sigma \in \mathbb{R}; \sigma = \omega(T\sqrt{\log m})$ then:
 
 $$
 \exist \text{constant}M = O(1); \\ s.t. \text{the distribution of following algo} \mathcal{A}:
 $$
 
-1. $\bold{v} \stackrel{$}{\longleftarrow} h$
-2. $\bold{z} \stackrel{$}{\longleftarrow} D\_\sigma^m$
-3.  output $(\bold{z, v})$ with probability $\min(\frac{D\_\sigma^m(\bold{z})}{M D\_{\bold{v}, \sigma}^m(\bold{z})}, 1)$
+1. $\mathbf{v} \stackrel{$}{\longleftarrow} h$
+2. $\mathbf{z} \stackrel{$}{\longleftarrow} D\_\sigma^m$
+3.  output $(\mathbf{z, v})$ with probability $\min(\frac{D\_\sigma^m(\mathbf{z})}{M D\_{\mathbf{v}, \sigma}^m(\mathbf{z})}, 1)$
 
     is within statistical distance $\frac{2^{-\omega(\log m )\}}{M}$ of the distribution of following algo. $\mathcal{F}$
 
-    1. $\bold{v} \stackrel{$}{\longleftarrow} h$
-    2. $\bold{z} \stackrel{$}{\longleftarrow} D\_\sigma^m$
-    3. output $(\bold{z, v})$ with probability $\frac{1}{M}$ if $\sigma = \alpha T, \forall \alpha > 0; M = e^{\frac{12}{\alpha} + \frac{1}{2\alpha^2\}}$, $Δ(\mathcal{A, F}) \leq \frac{2^{-100\}}{M}$;
+    1. $\mathbf{v} \stackrel{$}{\longleftarrow} h$
+    2. $\mathbf{z} \stackrel{$}{\longleftarrow} D\_\sigma^m$
+    3. output $(\mathbf{z, v})$ with probability $\frac{1}{M}$ if $\sigma = \alpha T, \forall \alpha > 0; M = e^{\frac{12}{\alpha} + \frac{1}{2\alpha^2\}}$, $Δ(\mathcal{A, F}) \leq \frac{2^{-100\}}{M}$;
 
 Lem4.7: set $V$, probability distribution $h: V → R$;$f:\mathbb{Z}^m → R$ if: $g\_v: \mathbb{Z}^m → \mathbb{R}$: family of probdist, indexed by $v \in V$, s.t.   $∃M \in \mathbb{R}$, s.t. $\forall v \Pr\[Mg\_v(z) ≥ f(z); z\stackrel{$}{←}f]≥ 1 - ϵ$; then: $\mathcal{A}$  
 
-1. $\bold{v} \stackrel{$}{\longleftarrow} h$
-2. $\bold{z} \stackrel{$}{\longleftarrow} g\_v$
-3. output $(\bold{z, v})$ with probability $\min(\frac{f(\bold{z})}{M g\_v(\bold{z})}, 1)$
+1. $\mathbf{v} \stackrel{$}{\longleftarrow} h$
+2. $\mathbf{z} \stackrel{$}{\longleftarrow} g\_v$
+3. output $(\mathbf{z, v})$ with probability $\min(\frac{f(\mathbf{z})}{M g\_v(\mathbf{z})}, 1)$
 
 $\mathcal{F}$
 
-1. $\bold{v} \stackrel{$}{\longleftarrow} h$
-2. $\bold{z} \stackrel{$}{\longleftarrow} D\_\sigma^m$
-3. output $(\bold{z, v})$ with probability $\frac{1}{M}$
+1. $\mathbf{v} \stackrel{$}{\longleftarrow} h$
+2. $\mathbf{z} \stackrel{$}{\longleftarrow} D\_\sigma^m$
+3. output $(\mathbf{z, v})$ with probability $\frac{1}{M}$
 
 $\Delta(\mathcal{A, F}) ≤ \frac{\epsilon}{M}$;
 
